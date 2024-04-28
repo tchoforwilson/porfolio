@@ -1,0 +1,118 @@
+@use "./variables" as *;
+@use "./colors" as *;
+@use "./mixins" as *;
+
+.header {
+  background: fixed;
+  background-size: cover;
+  height: 100vh;
+
+  padding: 6.5rem;
+  @include respond-mobile {
+    width: 100%;
+    padding: 3rem;
+  }
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 80%;
+}
+
+.hero h1 {
+  font-size: $h1-font;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.hero p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+}
+
+.hero a:link,
+.hero a:visited {
+  background-color: $color-primary;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--bg-color);
+  border: 2px solid $color-primary;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 0.8rem;
+  transition: all 0.5s ease;
+}
+
+.hero a:hover,
+.hero a:active {
+  background: transparent;
+  color: $color-primary;
+  box-shadow: 0 0 2rem $color-primary;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-content__text {
+  & p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+}
+
+.hero-social {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $color-white;
+    padding: 1.5rem;
+    border-radius: 50%;
+  }
+
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+    fill: $color-primary;
+  }
+}
+
+.hero-social__img:hover {
+  background: transparent;
+  box-shadow: 0 0 2rem $color-primary;
+
+  &__icon {
+    fill: $color-primary;
+  }
+}
+
+.hero-links {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  top: -250%;
+  transition: all 1s ease;
+}
+
+.hero-social__img:hover ~ .hero-links {
+  display: flex;
+}

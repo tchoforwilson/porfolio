@@ -1,0 +1,379 @@
+@use "./colors" as *;
+@use "./variables" as *;
+/*ABOUT*/
+
+section.about {
+  background: $color-secondary;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  @include respond-mobile {
+    flex-direction: column;
+    align-items: flex;
+  }
+}
+
+.about-img {
+  flex: 0 0 40%;
+
+  @include respond-mobile {
+    flex: 0 0 100%;
+  }
+}
+
+.about-img img {
+  width: 100%;
+  max-width: 32rem;
+  height: 30rem;
+
+  object-fit: cover;
+  resize: both;
+  object-position: center;
+  border: 0.2rem solid $color-primary;
+  box-shadow: 0 0 1rem $color-primary;
+}
+
+.about-text {
+  flex: 0 0 60%;
+
+  @include respond-mobile {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.about-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 2rem 0rem;
+
+  @include respond-mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  &__texts {
+    & p {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.about-icon {
+  width: 2rem;
+  height: 2rem;
+  fill: $color-white;
+  margin-right: 0.5rem;
+}
+
+/* Expereince */
+.experience-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  @include respond-mobile {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.experience {
+  &__item {
+    background-color: $color-secondary;
+    padding: 2rem;
+    border-radius: 1rem;
+    flex: 0 0 32%;
+  }
+
+  &__heading {
+    margin-bottom: 2rem;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__year {
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 0.3rem 0.3rem;
+    border-radius: 5px;
+  }
+
+  &__text {
+    font-size: 1.2rem;
+  }
+
+  &__type {
+    display: flex;
+    justify-content: flex-end;
+    color: $color-primary;
+    font-weight: 300;
+    font-size: 1.4rem;
+    text-shadow:
+      3px 3px 2rem $color-primary,
+      -2px 1px 3rem $color-white;
+    margin-top: 1rem;
+  }
+}
+
+/**Work done**/
+
+section.work-done {
+  background: $color-secondary;
+}
+
+.work-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @include respond-mobile {
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  @include respond-mobile {
+    gap: 0.1rem;
+  }
+
+  &__img {
+    padding: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $color-primary;
+  }
+
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+    fill: $color-white;
+  }
+
+  &__counter {
+    font-style: italic;
+    font-weight: 900;
+    font-size: 5rem;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+}
+
+/**Skills**/
+.skills-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-start;
+  gap: 1rem;
+
+  @include respond-mobile {
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.skill-item {
+  margin-bottom: 2rem;
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__container {
+    width: 100%;
+    height: 1rem;
+    background-color: $color-secondary;
+  }
+
+  &__content {
+    background-color: $color-primary;
+    height: 100%;
+  }
+}
+
+/** Contact */
+.contact {
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include respond-mobile {
+      flex-direction: column;
+      justify-content: center;
+      gap: 5rem;
+    }
+  }
+
+  &__item {
+    background: $color-secondary;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond-mobile {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $color-primary;
+    padding: 1.2rem;
+    border-radius: 50%;
+    position: absolute;
+    top: -30%;
+  }
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: $color-white;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 3rem 5rem;
+  }
+
+  &__line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & span {
+      border-bottom: 0.2rem solid $color-primary;
+      width: 20%;
+      margin: 5rem 0rem;
+
+      @include respond-mobile {
+        width: 80%;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @include respond-mobile {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__socials {
+    margin-top: 3rem;
+  }
+
+  &__heading {
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+  }
+
+  &__info {
+    flex: 0 0 30%;
+
+    @include respond-mobile {
+      flex: 0 0 100%;
+    }
+  }
+
+  &__form-container {
+    flex: 0 0 70%;
+
+    @include respond-mobile {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+  }
+
+  &__message {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+}
+
+.socials {
+  display: flex;
+  gap: 1.5rem;
+
+  @include respond-mobile {
+    justify-content: space-evenly;
+    margin-bottom: 5rem;
+  }
+
+  & a:link,
+  & a:visited {
+    background: $color-secondary;
+    padding: 0.8rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & a:hover,
+  & a:active {
+    background: transparent;
+    color: $color-primary;
+    box-shadow: 0 0 2rem $color-primary;
+  }
+
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+    fill: $color-white;
+  }
+}
+
+.footer {
+  background: $color-secondary;
+  padding: 2rem;
+  text-align: center;
+}

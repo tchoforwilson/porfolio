@@ -1,0 +1,59 @@
+@use "./colors" as *;
+@use "./mixins" as *;
+
+.form {
+  &__inline {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include respond-mobile {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  &__group {
+    margin-bottom: 2rem;
+    &:last-child {
+      width: 100%;
+    }
+
+    @include respond-mobile {
+      width: 100%;
+    }
+  }
+
+  &__error {
+    display: block;
+    color: $color-red;
+    font-size: 1.4rem;
+  }
+
+  &__input {
+    border: none;
+    background: $color-secondary;
+    padding: 1.5rem 1rem;
+    margin-right: 1rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: $color-white;
+
+    @include respond-mobile {
+      width: 100%;
+      margin-right: 0rem;
+    }
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+
+    &::placeholder {
+      text-transform: uppercase;
+    }
+    &--textarea {
+      width: 100%;
+    }
+  }
+}

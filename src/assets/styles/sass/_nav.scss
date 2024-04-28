@@ -1,0 +1,94 @@
+@use "./colors" as *;
+@use "./mixins" as *;
+
+.nav {
+  position: fixed;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  padding: 1rem 16%;
+
+  transition: all 0.5s ease;
+
+  &.sticky {
+    background-color: $bg-color;
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+    padding: 0.8rem 16%;
+  }
+
+  &__logo {
+    font-size: 3.6rem;
+    color: $color-white;
+    font-weight: 600;
+  }
+
+  &__toggle {
+    display: none;
+    width: 5rem;
+    height: 5rem;
+    fill: $color-white;
+
+    @include respond-mobile {
+      display: block;
+    }
+  }
+
+  &__container {
+    position: relative;
+    @include respond-mobile {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    @include respond-mobile {
+      flex-direction: column;
+      gap: 1rem;
+      position: absolute;
+
+      top: 3rem;
+      left: -6rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 2rem;
+  }
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: $color-white;
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: $color-white;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+  }
+
+  &__link:hover,
+  &__link:active {
+    color: $color-primary;
+    text-shadow:
+      3px 3px 2rem $color-primary,
+      -2px 1px 3rem $color-white;
+  }
+}
