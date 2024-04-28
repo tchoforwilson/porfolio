@@ -145,7 +145,7 @@ const App = () => {
           </h2>
           <div className="about-content">
             <div className="about-img">
-              <img src={require("./assets/images/about.jpg")} alt="about" />
+              <img src={require("./assets/images/about.png")} alt="about" />
             </div>
             <div className="about-text">
               <p className="about-description">
