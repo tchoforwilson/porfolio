@@ -24,6 +24,7 @@
 }
 
 .hero h1 {
+  display: block;
   font-size: $h1-font;
   font-weight: 900;
   line-height: 1.2;
@@ -108,11 +109,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.3rem;
-  top: -250%;
-  transition: all 1s ease;
+  gap: 1rem;
+  top: -300%;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: centers;
+    background-color: $color-white;
+    padding: 1.5rem;
+    border-radius: 50%;
+  }
+
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+    fill: $color-primary;
+  }
 }
 
 .hero-social__img:hover ~ .hero-links {
   display: flex;
+  transition: all 1s ease;
 }
