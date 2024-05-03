@@ -107,9 +107,9 @@ const App = () => {
       <header className="header">
         <div className="hero">
           <h1>
-            Hi there ! I'm <span>Lac-doh-Wilson.</span>
+            Hi there ! I'm <span>Wilson.</span>
           </h1>
-          <p>I'm a full stack developer base in Doual, Cameroon.</p>
+          <p>I'm a full stack developer base in Douala, Cameroon.</p>
           <Link to="#">more about me</Link>
         </div>
         <div className="hero-content">
@@ -130,7 +130,11 @@ const App = () => {
             <div className="hero-links">
               {socials.map((item) => (
                 <Link key={item.to} to={item.to} className="hero-links__item">
-                  <Icon key={item.icon} name={item.icon} />
+                  <Icon
+                    key={item.icon}
+                    name={item.icon}
+                    className="hero-links__icon"
+                  />
                 </Link>
               ))}
             </div>
