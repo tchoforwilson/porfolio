@@ -2,8 +2,9 @@ import React, { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import Icon from "./components/icon";
-import ExperienceItem from "./components/Experience";
-import SkillItem from "./components/SkillItem";
+import Experience from "./components/Experience";
+import Skill from "./components/Skill";
+import Project from "./components/Project";
 import {
   FormContainer,
   FormField,
@@ -13,6 +14,7 @@ import {
 
 import experiences from "./data/experiences";
 import skills from "./data/skills";
+import projects from "./data/projects";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -29,11 +31,11 @@ const validationSchema = Yup.object().shape({
 
 const socials = [
   { icon: "telegram", to: "https://www.telegram.com/tchoforwilson" },
-  { icon: "whatsapp", to: "https://www.whatsapp.com/tchoforwilson" },
+  { icon: "whatsapp", to: "https://wa.link/6oqk9y" },
   { icon: "twitter", to: "https://twitter.com/lacdohwilson" },
   {
     icon: "linkedin1",
-    to: "https://www.linkedin.com/in/lac-doh-wilson-tchofor-engineer",
+    to: "https://www.linkedin.com/in/lac-doh-wilson",
   },
 ];
 
@@ -187,7 +189,7 @@ const App = () => {
                   </p>
                 </div>
               </div>
-              <Link to="#" class="btn btn--cv">
+              <Link to="#" className="btn btn--cv">
                 Download CV
               </Link>
             </div>
@@ -199,7 +201,10 @@ const App = () => {
           <h2 className="heading-secondary">Work Expereince</h2>
           <div className="experience-content">
             {experiences.map((experience) => (
-              <ExperienceItem key={experience.year} experience={experience} />
+              <Experience
+                key={`${experience.year} + ${experience.company}`}
+                experience={experience}
+              />
             ))}
           </div>
         </section>
@@ -218,25 +223,44 @@ const App = () => {
               <div className="work__img">
                 <Icon name="briefcase1" className="work__icon" />
               </div>
-              <strong className="work__counter">08</strong>
+              <strong className="work__counter">06</strong>
               <p className="work__text">Done projects</p>
             </div>
             <div className="work">
               <div className="work__img">
                 <Icon name="office" className="work__icon" />
               </div>
-              <strong className="work__counter">05</strong>
+              <strong className="work__counter">03</strong>
               <p className="work__text">Industries</p>
             </div>
           </div>
         </section>
 
+        {/** Projects */}
+        <section className="projects" id="projects">
+          <h2 className="heading-secondary">
+            Showcase <span>Projects</span>
+          </h2>
+          <div className="projects-content">
+            {projects.map((project) => (
+              <Project
+                key={`${project.title}`}
+                imgSrc={project.img}
+                title={project.title}
+                description={project.description}
+                to={project.to}
+                tools={project.tools}
+              />
+            ))}
+          </div>
+        </section>
+
         {/** Section skills */}
         <section className="skills" id="skills">
-          <h3 className="heading-secondary">Skills</h3>
+          <h2 className="heading-secondary">Skills</h2>
           <div className="skills-content">
             {skills.map((skill) => (
-              <SkillItem
+              <Skill
                 key={skill.title}
                 title={skill.title}
                 width={skill.width}
@@ -244,6 +268,7 @@ const App = () => {
             ))}
           </div>
         </section>
+
         {/**  Section contact */}
         <section className="contact" id="contact">
           <h2 className="heading-secondary">
@@ -287,25 +312,19 @@ const App = () => {
                 <div className="contact__socials">
                   <h4 className="heading-quart">My socials:</h4>
                   <div className="socials">
-                    <Link to="https://t.me/tchofowilson" target="_blank">
+                    <Link to="https://t.me/tchoforwilson" target="_blank">
                       <Icon name="telegram" className="socials__icon" />
                     </Link>
-                    <Link
-                      to="https://twitter.com/tchoforwilson"
-                      target="_blank"
-                    >
+                    <Link to="https://twitter.com/lacdohwilson" target="_blank">
                       <Icon name="twitter" className="socials__icon" />
                     </Link>
                     <Link
-                      to="www.linkedin.com/in/lac-doh-wilson-tchofor-engineer"
+                      to="www.linkedin.com/in/lac-doh-wilson"
                       target="_blank"
                     >
                       <Icon name="linkedin2" className="socials__icon" />
                     </Link>
-                    <Link
-                      to="https://twitter.com/tchoforwilson"
-                      target="_blank"
-                    >
+                    <Link to="https://wa.link/6oqk9y" target="_blank">
                       <Icon name="whatsapp" className="socials__icon" />
                     </Link>
                   </div>
