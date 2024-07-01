@@ -6,7 +6,7 @@ const experiences = [
     location: "Douala, CMR",
     type: "Onsite",
     description:
-      "Managed efficient SQL queries and data transport. Built APIs and data clients to consume APIs.Corrected, modified and upgraded software to improve performance.",
+      "Designed and implemented RESTful APIs to power the backend of web and Mobile applications",
   },
   {
     title: "Full-Stack Developer",
@@ -15,7 +15,7 @@ const experiences = [
     location: "New Mexico, USA",
     type: "Remote",
     description:
-      "Enhanced user experience by developing and implementing a responsive front-end interface for web applications.Used NodeJS and SQL/No-SQL to develop and manage databases.",
+      "Developed and maintain web and mobile applications using React, Express, NodeJS and MongoDB",
   },
   {
     title: "Backend Developer",
@@ -24,16 +24,7 @@ const experiences = [
     location: "Buea, CMR",
     type: "Remote",
     description:
-      "Reviewed code, debugged problems, and corrected issues. Used NestJS, ORM and SQL to develop and manage databases.Worked with back-end developers to design APIs.",
-  },
-  {
-    title: "Full-Stack Developer",
-    active: "2022-2023",
-    company: "Freelance",
-    location: "Bamenda, CMR",
-    type: "Onsite",
-    description:
-      "Modernized and optimized legacy code writinng in C++, reducing cost and enhancing functionality.Conducted testing and degugging of code using google tests prior to release.",
+      "Design and developed scalable, maintainable, and secure REST APIs using NestJS framework",
   },
   {
     title: "Software Developer",
@@ -42,7 +33,7 @@ const experiences = [
     location: "Douala, CMR",
     type: "Remote",
     description:
-      "Revised, modularized and updated old code bases to modern development standards, reducing operating costs and improving functionality.Performed testing to verify software quality and function prior to release.",
+      "Designed and implemented unit and integration tests using Google Test framework to ensure code quality and functionality.",
   },
 ];
 
